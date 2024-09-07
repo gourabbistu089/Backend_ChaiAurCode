@@ -2,49 +2,51 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
+console.log(port)
 
 const githubData = {
-  login: "g3vind",
-  id: 70854788,
-  node_id: "MDQ6VXNlcjcwODU0Nzg4",
-  avatar_url: "https://avatars.githubusercontent.com/u/70854788?v=4",
-  gravatar_id: "",
-  url: "https://api.github.com/users/g3vind",
-  html_url: "https://github.com/g3vind",
-  followers_url: "https://api.github.com/users/g3vind/followers",
-  following_url: "https://api.github.com/users/g3vind/following{/other_user}",
-  gists_url: "https://api.github.com/users/g3vind/gists{/gist_id}",
-  starred_url: "https://api.github.com/users/g3vind/starred{/owner}{/repo}",
-  subscriptions_url: "https://api.github.com/users/g3vind/subscriptions",
-  organizations_url: "https://api.github.com/users/g3vind/orgs",
-  repos_url: "https://api.github.com/users/g3vind/repos",
-  events_url: "https://api.github.com/users/g3vind/events{/privacy}",
-  received_events_url: "https://api.github.com/users/g3vind/received_events",
-  type: "User",
-  site_admin: false,
-  name: "Govind Kumar",
-  company: null,
-  blog: "https://g3vind.vercel.app/",
-  location: " India",
-  email: null,
-  hireable: true,
-  bio: "Frontend Developer | MCA'24 @ VIT Vellore",
-  twitter_username: "g3vind",
-  public_repos: 46,
-  public_gists: 0,
-  followers: 13,
-  following: 15,
-  created_at: "2020-09-06T16:30:19Z",
-  updated_at: "2024-02-17T05:35:54Z",
-};
+  
+    "login": "gourabbistu089",
+    "id": 144556159,
+    "node_id": "U_kgDOCJ3Afw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/144556159?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/gourabbistu089",
+    "html_url": "https://github.com/gourabbistu089",
+    "followers_url": "https://api.github.com/users/gourabbistu089/followers",
+    "following_url": "https://api.github.com/users/gourabbistu089/following{/other_user}",
+    "gists_url": "https://api.github.com/users/gourabbistu089/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/gourabbistu089/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/gourabbistu089/subscriptions",
+    "organizations_url": "https://api.github.com/users/gourabbistu089/orgs",
+    "repos_url": "https://api.github.com/users/gourabbistu089/repos",
+    "events_url": "https://api.github.com/users/gourabbistu089/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/gourabbistu089/received_events",
+    "type": "User",
+    "site_admin": false,
+    "name": "Gourab Bistu",
+    "company": null,
+    "blog": "www.linkedin.com/in/gourab-bistu-05a709286",
+    "location": "Jamshedpur, NIT",
+    "email": null,
+    "hireable": null,
+    "bio": "MCA@26, NIT JSR Ctrl + Alt + Love Coding ❤️ | Making the world a better place through code 🌍 | Committing to the byte side 🌐",
+    "twitter_username": null,
+    "public_repos": 33,
+    "public_gists": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2023-09-09T18:01:34Z",
+    "updated_at": "2024-08-24T17:16:11Z"
+    };
 
 app.get("/", (req, res) => {
   res.send({ status: "OK" });
 });
 
 app.get("/twitter", (req, res) => {
-  res.send("@g3vind");
+  res.send("<h1>Twitter Page</h1>");
 });
 
 app.get("/login", (req, res) => {
@@ -52,7 +54,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/github", (req, res) => {
-  res.send(githubData);
+  res.json(githubData);
 });
 
 app.listen(port, () => {
