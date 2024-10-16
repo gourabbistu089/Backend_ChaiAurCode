@@ -5,7 +5,6 @@ import { app } from "./app.js";
 dotenv.config({
   path: "./env",
 });
-console.log("This is a normal console to check prettier");
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 8000, () => {
